@@ -1,0 +1,145 @@
+[
+    {
+        "pair_name": "Проф. іноземна мова",
+        "teacher": "",
+        "day": "tuesday",
+        "pair_number": 1,
+        "periodicity": "every",
+        "from_week": 1,
+        "to_week": 15,
+        "pair_type": "practice"
+    },
+    {
+        "pair_name": "Бізнес-процеси в кібебезпеці",
+        "teacher": "доц. Тимошенко Л.М.",
+        "day": "tuesday",
+        "pair_number": 2,
+        "periodicity": "every",
+        "from_week": 1,
+        "to_week": 15
+    },
+    {
+        "pair_name": "Бізнес-процеси в кібебезпеці",
+        "teacher": "доц. Тимошенко Л.М.",
+        "day": "tuesday",
+        "pair_number": 3,
+        "periodicity": "even",
+        "from_week": 2,
+        "to_week": 14,
+        "pair_type": "lab"
+    },
+    {
+        "pair_name": "Захист соціо-технічних систем",
+        "teacher": "доц. Бобок І.І.",
+        "day": "wednesday",
+        "pair_number": 1,
+        "periodicity": "odd",
+        "from_week": 1,
+        "to_week": 15
+    },
+    {
+        "pair_name": "Захист соціо-технічних систем",
+        "teacher": "доц. Бобок І.І.",
+        "day": "wednesday",
+        "pair_number": 1,
+        "periodicity": "even",
+        "from_week": 2,
+        "to_week": 14,
+        "pair_type": "lab"
+    },
+    {
+        "pair_name": "Сучасні методи захисту комп’ютерних мереж",
+        "teacher": "доц. Бобок І.І.",
+        "day": "wednesday",
+        "pair_number": 2,
+        "periodicity": "every",
+        "from_week": 1,
+        "to_week": 15
+    },
+    {
+        "pair_name": "Сучасні методи захисту комп’ютерних мереж",
+        "teacher": "доц. Бобок І.І.",
+        "day": "wednesday",
+        "pair_number": 3,
+        "periodicity": "odd",
+        "from_week": 2,
+        "to_week": 14,
+        "pair_type": "lab"
+    },
+    {
+        "pair_name": "Сучасні КСЗІ та їх особливості",
+        "teacher": "доц Агаджанян О.В.",
+        "day": "thursday",
+        "pair_number": 1,
+        "periodicity": "even",
+        "from_week": 2,
+        "to_week": 14,
+        "pair_type": "practice"
+    },
+    {
+        "pair_name": "Сучасні КСЗІ та їх особливості",
+        "teacher": "доц Агаджанян О.В.",
+        "day": "thursday",
+        "pair_number": 2,
+        "periodicity": "every",
+        "from_week": 1,
+        "to_week": 15
+    },
+    {
+        "pair_name": "Проблеми кібербезпеки та сучасні підходи до їх вирішення",
+        "teacher": "Проф. Соколов А.В.",
+        "day": "thursday",
+        "pair_number": 3,
+        "periodicity": "every",
+        "from_week": 1,
+        "to_week": 15
+    },
+    {
+        "pair_name": "Проблеми кібербезпеки та сучасні підходи до їх вирішення",
+        "teacher": "Проф. Соколов А.В.",
+        "day": "thursday",
+        "pair_number": 4,
+        "periodicity": "odd",
+        "from_week": 3,
+        "to_week": 15,
+        "pair_type": "lab"
+    },
+    {
+        "pair_name": "Прикладна загальна теорія систем безпеки",
+        "teacher": "доц. Кушніренко Н.І.",
+        "day": "friday",
+        "pair_number": 1,
+        "periodicity": "odd",
+        "from_week": 1,
+        "to_week": 15,
+        "pair_type": "lab"
+    },
+    {
+        "pair_name": "Прикладна загальна теорія систем безпеки",
+        "teacher": "доц. Кушніренко Н.І.",
+        "day": "friday",
+        "pair_number": 1,
+        "periodicity": "even",
+        "from_week": 2,
+        "to_week": 14
+    },
+    {
+        "pair_name": "Організація винахід. діяльності в АТ-галузі",
+        "teacher": "проф. Савєльєва О.С.",
+        "day": "friday",
+        "pair_number": 2,
+        "periodicity": "odd",
+        "from_week": 1,
+        "to_week": 15
+    },
+    {
+        "pair_name": "Організація винахід. діяльності в АТ-галузі",
+        "teacher": "проф. Савєльєва О.С.",
+        "day": "friday",
+        "pair_number": 2,
+        "periodicity": "even",
+        "from_week": 2,
+        "to_week": 14,
+        "pair_type": "lab"
+    }
+]
