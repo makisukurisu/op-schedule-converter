@@ -4,7 +4,7 @@ from typing import Literal
 import pydantic
 import datetime
 
-START_WEEK_NUMBER = datetime.date(2024, 9, 16).isocalendar().week
+START_WEEK_NUMBER = datetime.date(2024, 9, 2).isocalendar().week
 
 day_translations = {
     "monday": "понеділок",
@@ -53,14 +53,22 @@ class Schedule(pydantic.BaseModel):
     pair_info: list[PairInfo]
 
     @staticmethod
-    def get_week_oddity(day_of_the_week: datetime.date) -> Literal["even", "odd"]:
+    def localized_week_number(day_of_the_week: datetime.date) -> int:
         week_number = day_of_the_week.isocalendar().week
         localized_week_number = (week_number - START_WEEK_NUMBER) + 1
 
         if localized_week_number < 0:
             raise ValueError("Week number is less than 0")
 
-        return "odd" if localized_week_number % 2 == 1 else "even"
+        return localized_week_number
+
+    @staticmethod
+    def get_week_oddity(day_of_the_week: datetime.date) -> Literal["even", "odd"]:
+        return (
+            "odd"
+            if Schedule.localized_week_number(day_of_the_week=day_of_the_week) % 2 == 1
+            else "even"
+        )
 
     def get_pair_info(self, pair: Pair) -> PairInfo:
         filtered_info = filter(
@@ -77,6 +85,18 @@ class Schedule(pydantic.BaseModel):
 
         return result
 
+    def filter_pairs_by_week(self, day_of_the_week: datetime.date) -> list[Pair]:
+        localized_week_number = Schedule.localized_week_number(day_of_the_week)
+        week_oddity = self.get_week_oddity(day_of_the_week)
+
+        return list(
+            filter(
+                lambda x: x.from_week <= localized_week_number <= x.to_week
+                and (x.periodicity == "every" or x.periodicity == week_oddity),
+                self.pairs,
+            )
+        )
+
     def get_schedule_for_week(
         self, day_of_the_week: datetime.date
     ) -> dict[str, list[PairRepresentation]]:
@@ -88,15 +108,9 @@ class Schedule(pydantic.BaseModel):
             )
 
         week_pairs = defaultdict(list)
-        week_oddity = self.get_week_oddity(day_of_the_week)
+        pairs = self.filter_pairs_by_week(day_of_the_week)
 
-        for pair in self.pairs:
-            match (pair.periodicity, week_oddity):
-                case "every", _:
-                    _add_pair(pair)
-                case "even", "even":
-                    _add_pair(pair)
-                case "odd", "odd":
-                    _add_pair(pair)
+        for pair in pairs:
+            _add_pair(pair)
 
         return week_pairs
