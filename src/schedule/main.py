@@ -53,7 +53,7 @@ def main(
     for day, pairs in result.items():
         message += f"# {classes.day_translations[day].capitalize()}:\n\n"
         for pair in sorted(pairs, key=lambda x: x.pair_number):
-            message += f"## #{pair.pair_number}\nНазва пари: {pair.pair_name}\nВикладач: {pair.teacher}\n\nДодаткова інформація: {pair.additional}\n\n"
+            message += f"## #{pair.pair_number}\nНазва пари: {pair.pair_name}\n\nВикладач: {pair.teacher} ({pair.pair_type})\n\nДодаткова інформація:\n{pair.additional}\n\n"
         message += "\n---\n"
 
     print(

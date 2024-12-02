@@ -14,6 +14,11 @@ day_translations = {
     "friday": "п'ятниця",
     "saturday": "субота",
 }
+pair_type_translations = {
+    "lecture": "лекція",
+    "practice": "практика",
+    "lab": "лабораторна",
+}
 
 
 class PairInfo(pydantic.BaseModel):
@@ -45,6 +50,17 @@ class PairRepresentation(pydantic.BaseModel):
     pair_number: int
     periodicity: str
     additional: str
+    pair_type: str
+
+    @pydantic.field_validator("pair_type", mode="after")
+    @classmethod
+    def translate_pair_type(cls: "type[PairRepresentation]", value: str) -> str:
+        return pair_type_translations[value]
+
+    @pydantic.field_validator("day", mode="after")
+    @classmethod
+    def translate_day(cls: "type[PairRepresentation]", value: str) -> str:
+        return day_translations[value]
 
 
 class Schedule(pydantic.BaseModel):
